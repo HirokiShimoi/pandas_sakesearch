@@ -1,7 +1,7 @@
 import pandas as pd
 
 # CSVファイルを読み込む
-df = pd.read_csv('./filtered_excel/bcart_products.csv')
+df = pd.read_excel('./filtered_excel/bcart_products.xlsx')
 
 df.replace(['\t', '\n', '\r'], ['', '',''], regex=True, inplace=True)
 
