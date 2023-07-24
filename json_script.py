@@ -1,7 +1,7 @@
 import pandas as pd
 
 # CSVファイルを読み込む
-df = pd.read_excel('./filtered_excel/bcart_products.xlsx')
+df = pd.read_excel('./filtered_excel/bcart_products_atago.xlsx')
 
 df.replace(['\t', '\n', '\r'], ['', '',''], regex=True, inplace=True)
 
@@ -49,4 +49,4 @@ for name, group in grouped:
     new_data.append(item)
 
 # JSONファイルとして保存
-pd.DataFrame(new_data).to_json('converted.json_heiwa', orient='records',force_ascii=False)
+pd.DataFrame(new_data).to_json('converted.json_atago', orient='records',force_ascii=False)
