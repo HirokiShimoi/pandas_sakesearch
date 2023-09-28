@@ -20,11 +20,11 @@ def calc_spec(name):
 
 
 for file_name in input_files:
-    df = pd.read_csv(os.path.join(input_dir, file_name), encoding='shift_jis', 
+    df = pd.read_csv(os.path.join(input_dir, file_name), encoding='cp932', 
                      usecols=['【基本】商品名','【セット】品番', '【基本】キャッチコピー','【基本】説明','【基本】生産地','【基本】画像','【セット】単価','【セット】セット名'])
     
     df = df[['【基本】商品名','【セット】セット名','【セット】品番', '【基本】生産地', '【セット】単価', '【基本】キャッチコピー','【基本】説明', '【基本】画像']]
-    df.insert(3, 'メーカー名', '平和酒造')  # 適宜、メーカー名を変更する
+    df.insert(3, 'メーカー名', '石本酒造')  # 適宜、メーカー名を変更する
     df.insert(5, '甘辛度1', '中口')
     df.insert(6, '甘辛度2', '')
     df.insert(7, '香り1', 'やや強い')
@@ -41,5 +41,5 @@ for file_name in input_files:
     new_name = os.path.splitext(file_name)[0]
     
 
-    df.to_excel(os.path.join(output_dir, new_name + '_heiwa' +'.xlsx'), index=False)    # 名称変更
+    df.to_excel(os.path.join(output_dir, new_name + 'all' +'.xlsx'), index=False)    # 名称変更
     #df.to_csv(os.path.join(output_dir, new_name + '.csv'), index=False)

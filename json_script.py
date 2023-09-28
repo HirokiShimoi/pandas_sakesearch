@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel('./filtered_excel/bcart_products_heiwa.xlsx')
+df = pd.read_excel('./filtered_excel/bcart_products_kokuryuu.xlsx')
 
 df.replace(['\t', '\n', '\r'], ['', '',''], regex=True, inplace=True)
 
@@ -49,4 +49,4 @@ for name, group in grouped:
     new_data.append(item)
 
 # JSONファイルとして保存
-pd.DataFrame(new_data).to_json('converted.json_heiwa', orient='records',force_ascii=False)
+pd.DataFrame(new_data).to_json('converted.json_kokuryuu', orient='records',force_ascii=False)
