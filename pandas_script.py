@@ -34,6 +34,7 @@ for file_name in input_files:
     df.insert(12, 'にごり', False)
     df.insert(13, '酒米', '山田錦')
     df.insert(14, '在庫', True)
+    df.insert(14, 'ギフト', True)
 
 
 
